@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BVCTV Events Jumbotron</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --accent-1: #a78bfa;
+            --glass-bg: rgba(255, 255, 255, 0.12);
+            --glass-border: rgba(255, 255, 255, 0.22);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --tag-campus: rgba(167, 139, 250, 0.35);
+            --tag-campus-border: rgba(167, 139, 250, 0.6);
+            --tag-holiday: rgba(251, 191, 36, 0.3);
+            --tag-holiday-border: rgba(251, 191, 36, 0.6);
+            --tag-academic: rgba(52, 211, 153, 0.3);
+            --tag-academic-border: rgba(52, 211, 153, 0.6);
+            --tag-local: rgba(96, 165, 250, 0.3);
+            --tag-local-border: rgba(96, 165, 250, 0.6);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            height: 100vh; width: 100vw;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #5b21b6 0%, #312e81 40%, #1e3a8a 100%);
+            display: flex; justify-content: center; align-items: center;
+            overflow: hidden; user-select: none;
+        }
+
+        .bg-orb {
+            position: fixed; border-radius: 50%;
+            filter: blur(80px); pointer-events: none; z-index: 0;
+        }
+        .bg-orb-1 {
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+            top: -150px; left: -80px;
+        }
+        .bg-orb-2 {
+            width: 350px; height: 350px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
+            bottom: -100px; right: -80px;
+        }
+
+        /* ── WRAPPER: full bleed 1748×572, no glass container ── */
+        .dashboard-wrapper {
+            width: 1748px; height: 572px;
+            position: relative;
+            padding: 50px;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* ── HEADER ── */
+        .header-row {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .title-group { display: flex; flex-direction: column; }
+
+        .page-label {
+            font-size: 13px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 4px; color: var(--accent-1);
+            margin-bottom: 4px;
+        }
+
+        .page-title {
+            font-size: 32px; font-weight: 700; line-height: 1;
+            letter-spacing: -1px; margin-bottom: 22px;
+        }
+
+        /* ── CONTENT AREA ── */
+        /* 572 - 50 (top pad) - 50 (bottom pad) - 32 (title) - 4 (label) - 20 (margin) = 416px */
+        .content-area {
+            display: flex; justify-content: space-between;
+            height: 416px;
+        }
+
+        /* LEFT: featured card — 480px wide */
+        .featured-column {
+            width: 480px;
+            display: flex; flex-direction: column;
+            margin-right: 40px;
+        }
+
+        /* RIGHT: 2x2 grid — 1748 - 50 - 50 - 480 - 40 = 1128px */
+        .events-column {
+            width: 1128px;
+            display: flex; flex-direction: column;
+        }
+
+        .col-label {
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 3px; color: var(--text-secondary);
+            height: 16px; line-height: 16px;
+            margin-bottom: 12px;
+        }
+
+        /* ── FEATURED CARD ── */
+        /* 416 - 16 (label) - 12 (margin) = 388px */
+        .featured-card {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            height: 388px;
+            overflow: hidden;
+            padding: 28px;
+        }
+
+        .featured-top-row {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .featured-date-group { text-align: right; }
+
+        .featured-title {
+            font-size: 34px; font-weight: 700; line-height: 1.05;
+            letter-spacing: -0.5px; margin-bottom: 12px;
+        }
+
+        .featured-meta {
+            font-size: 13px; font-weight: 400; color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .featured-desc {
+            font-size: 15px; font-weight: 400;
+            color: rgba(255, 255, 255, 0.9); line-height: 1.6;
+        }
+
+        /* ── 2x2 GRID ── */
+        /* Total height: 388px, 2 rows with 18px gap = (388 - 18) / 2 = 185px per row */
+        .event-list {
+            display: flex; flex-direction: column;
+            height: 388px;
+        }
+
+        /* Each row holds 2 cards side by side */
+        .event-row {
+            display: flex; justify-content: space-between;
+            height: 185px;
+            margin-bottom: 18px;
+        }
+        .event-row:last-child { margin-bottom: 0; }
+
+        /* Each card fills half the row minus the gap */
+        .event-card {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            width: 546px;
+            height: 185px;
+        }
+
+        .event-body {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 22px;
+            height: 100%;
+        }
+
+        .event-left {
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: flex-start;
+        }
+
+        .event-tag {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.5px; border-radius: 5px;
+            display: inline-block;
+            padding-top: 5px; padding-bottom: 5px;
+            padding-left: 10px; padding-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .event-title {
+            font-size: 26px; font-weight: 700; line-height: 1.1;
+            letter-spacing: -0.3px; margin-bottom: 5px;
+        }
+
+        .event-sub {
+            font-size: 14px; font-weight: 400; color: var(--text-secondary);
+        }
+
+        /* Position-specific padding — gap between left and right cards in each row */
+        .card-top-left    { margin-right: 18px; }
+        .card-bottom-left { margin-right: 18px; }
+        .card-top-right   { }
+        .card-bottom-right { }
+
+        .event-right {
+            text-align: right; display: flex; flex-direction: column;
+            align-items: flex-end; justify-content: center;
+            margin-left: 16px;
+        }
+
+        .event-date-line {
+            font-size: 20px; font-weight: 700; line-height: 1; white-space: nowrap;
+        }
+
+        .event-days-away {
+            font-size: 11px; font-weight: 600; opacity: 0.6;
+            margin-top: 8px;
+        }
+
+        /* Tag colour variants */
+        .tag-campus   { background: var(--tag-campus);   border: 1px solid var(--tag-campus-border);   color: #c4b5fd; }
+        .tag-holiday  { background: var(--tag-holiday);  border: 1px solid var(--tag-holiday-border);  color: #fde68a; }
+        .tag-academic { background: var(--tag-academic); border: 1px solid var(--tag-academic-border); color: #6ee7b7; }
+        .tag-local    { background: var(--tag-local);    border: 1px solid var(--tag-local-border);    color: #93c5fd; }
+
+        /* Today highlight */
+        .event-card.today {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+        .today-badge {
+            font-size: 11px; font-weight: 800; text-transform: uppercase;
+            letter-spacing: 2px; background: rgba(74, 222, 128, 0.25);
+            border: 1px solid rgba(74, 222, 128, 0.5);
+            color: #4ade80; padding: 2px 8px; border-radius: 5px;
+            margin-left: 8px; vertical-align: middle;
+        }
+
+        /* Animations */
+        .fade-in { animation: fadeIn 0.5s ease-out forwards; opacity: 0; }
+        @keyframes fadeIn { to { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <div class="bg-orb bg-orb-1"></div>
+    <div class="bg-orb bg-orb-2"></div>
+
+    <div class="dashboard-wrapper">
+
+        <header class="header-row">
+            <div class="title-group">
+                <div class="page-label">Bow Valley College</div>
+                <div class="page-title">Upcoming Events</div>
+            </div>
+        </header>
+
+        <div class="content-area">
+
+            <div class="featured-column">
+                <div class="col-label">Coming Up</div>
+                <div class="featured-card" id="featured-card"></div>
+            </div>
+
+            <div class="events-column">
+                <div class="col-label">Important Dates</div>
+                <div class="event-list" id="event-list"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+    // ============================================================
+    // CONFIG
+    // ============================================================
+    // To switch to live Power Automate data:
+    //   1. Set DATA_SOURCE to "json"
+    //   2. Set DATA_URL to the raw GitHub URL of your events.json
+    //
+    // events.json format:
+    // [
+    //   {
+    //     "title": "Open House",
+    //     "description": "...",
+    //     "date": "2026-03-22",         // YYYY-MM-DD
+    //     "time": "10:00 AM - 2:00 PM", // optional
+    //     "location": "Main Campus",    // optional
+    //     "category": "campus"          // campus | holiday | academic | local
+    //   }
+    // ]
+
+    var CONFIG = {
+        DATA_SOURCE: "json",
+        DATA_URL: "events.json",
+        REFRESH_MS: 3600000
+    };
+
+    // ============================================================
+    // SAMPLE DATA
+    // ============================================================
+    var SAMPLE_EVENTS = [
+        {
+            title: "Open House",
+            description: "Join us and explore everything Bow Valley College has to offer. Meet with academic advisors, tour our facilities, and discover programs in business, health, technology, community studies, and entertainment arts.",
+            date: "2026-03-22",
+            time: "10:00 AM - 2:00 PM",
+            location: "Main Campus & Okotoks Campus",
+            category: "campus"
+        },
+        {
+            title: "Good Friday",
+            description: "College closed. No classes or services.",
+            date: "2026-04-03",
+            time: "All Day",
+            location: "All Campuses",
+            category: "holiday"
+        },
+        {
+            title: "Last Day to Withdraw",
+            description: "Last day to withdraw from Winter 2026 courses without academic penalty.",
+            date: "2026-04-07",
+            time: "11:59 PM",
+            location: "",
+            category: "academic"
+        },
+        {
+            title: "SABVC Wellness Fair",
+            description: "Free resources, giveaways and mental health support for students.",
+            date: "2026-04-09",
+            time: "11:00 AM - 3:00 PM",
+            location: "TransAlta Hall",
+            category: "campus"
+        },
+        {
+            title: "Winter Exams Begin",
+            description: "Final examination period for Winter 2026 semester.",
+            date: "2026-04-14",
+            time: "Starting 8:00 AM",
+            location: "Various rooms - check myCampus",
+            category: "academic"
+        },
+        {
+            title: "Summer Semester Begins",
+            description: "First day of classes for Summer 2026.",
+            date: "2026-05-04",
+            time: "All Day",
+            location: "",
+            category: "academic"
+        },
+        {
+            title: "Victoria Day",
+            description: "College closed for the Victoria Day statutory holiday.",
+            date: "2026-05-18",
+            time: "All Day",
+            location: "All Campuses",
+            category: "holiday"
+        },
+        {
+            title: "Calgary Stampede Parade",
+            description: "Annual Calgary Stampede parade through downtown.",
+            date: "2026-07-10",
+            time: "9:00 AM",
+            location: "Downtown Calgary",
+            category: "local"
+        }
+    ];
+
+    // ============================================================
+    // UTILITIES
+    // ============================================================
+    var CATEGORY_META = {
+        campus:   { label: "Campus Event",  tagClass: "tag-campus"   },
+        holiday:  { label: "Holiday",       tagClass: "tag-holiday"  },
+        academic: { label: "Academic Date", tagClass: "tag-academic" },
+        local:    { label: "Local Event",   tagClass: "tag-local"    }
+    };
+
+    var MONTH_FULL = [
+        "January","February","March","April","May","June",
+        "July","August","September","October","November","December"
+    ];
+
+    function parseLocalDate(str) {
+        var parts = str.split("-");
+        return new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+    }
+
+    function daysUntil(dateObj) {
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var target = new Date(dateObj.getTime());
+        target.setHours(0, 0, 0, 0);
+        return Math.round((target - today) / 86400000);
+    }
+
+    function daysAwayLabel(n) {
+        if (n === 0) return "Today";
+        if (n === 1) return "Tomorrow";
+        if (n < 0)   return "Past";
+        return "In " + n + " days";
+    }
+
+    // ============================================================
+    // RENDER
+    // ============================================================
+    function renderDashboard(events) {
+        var i, e, d, days;
+        var upcoming = [];
+
+        for (i = 0; i < events.length; i++) {
+            e = events[i];
+            d = parseLocalDate(e.date);
+            days = daysUntil(d);
+            if (days >= 0) {
+                upcoming.push({
+                    title:       e.title,
+                    description: e.description || "",
+                    time:        e.time || "",
+                    location:    e.location || "",
+                    category:    e.category,
+                    featured:    e.featured === true,
+                    end_date:    e.end_date || "",
+                    _date:       d,
+                    _days:       days
+                });
+            }
+        }
+
+        upcoming.sort(function(a, b) { return a._date - b._date; });
+
+        if (upcoming.length === 0) {
+            document.getElementById("featured-card").innerHTML =
+                "<div style='font-size:28px;opacity:0.6;padding:28px;'>No upcoming events found.</div>";
+            document.getElementById("event-list").innerHTML = "";
+            return;
+        }
+
+        // Find the soonest featured event; fall back to soonest overall
+        var featuredIndex = -1;
+        for (i = 0; i < upcoming.length; i++) {
+            if (upcoming[i].featured) { featuredIndex = i; break; }
+        }
+        if (featuredIndex === -1) { featuredIndex = 0; }
+
+        var featuredEvent = upcoming[featuredIndex];
+
+        // Build list from remaining events, excluding the featured one
+        var listEvents = [];
+        for (i = 0; i < upcoming.length; i++) {
+            if (i !== featuredIndex) { listEvents.push(upcoming[i]); }
+        }
+
+        renderFeatured(featuredEvent);
+        renderList(listEvents.slice(0, 4));
+    }
+
+    function formatDateDisplay(ev) {
+        var d = ev._date;
+        var start = MONTH_FULL[d.getMonth()] + " " + d.getDate();
+        if (ev.end_date) {
+            var ed = parseLocalDate(ev.end_date);
+            // Same month: "April 3 – 6", different month: "March 26 – April 1"
+            if (ed.getMonth() === d.getMonth()) {
+                return start + " \u2013 " + ed.getDate();
+            } else {
+                return start + " \u2013 " + MONTH_FULL[ed.getMonth()] + " " + ed.getDate();
+            }
+        }
+        return start;
+    }
+
+    function renderFeatured(ev) {
+        var meta = CATEGORY_META[ev.category] || CATEGORY_META.campus;
+        var d = ev._date;
+        var todayBadge = ev._days === 0 ? "<span class='today-badge'>Today</span>" : "";
+
+        var metaLine = "";
+        if (ev.time && ev.location) {
+            metaLine = ev.time + " &nbsp;&middot;&nbsp; " + ev.location;
+        } else if (ev.time) {
+            metaLine = ev.time;
+        } else if (ev.location) {
+            metaLine = ev.location;
+        }
+
+        var html = "";
+        html += "<div class='featured-top-row'>";
+        html +=   "<div class='event-tag " + meta.tagClass + "'>" + meta.label + "</div>";
+        html +=   "<div class='featured-date-group'>";
+        html +=     "<div class='event-date-line'>" + formatDateDisplay(ev) + "</div>";
+        html +=     "<div class='event-days-away'>" + daysAwayLabel(ev._days) + "</div>";
+        html +=   "</div>";
+        html += "</div>";
+        html += "<div class='featured-title'>" + ev.title + todayBadge + "</div>";
+        if (metaLine) {
+            html += "<div class='featured-meta'>" + metaLine + "</div>";
+        }
+        html += "<div class='featured-desc'>" + ev.description + "</div>";
+
+        document.getElementById("featured-card").innerHTML = html;
+    }
+
+    function renderList(events) {
+        var i, ev, meta, d, todayClass, todayBadge, delay;
+        var container = document.getElementById("event-list");
+
+        if (events.length === 0) {
+            container.innerHTML = "<div style='font-size:16px;opacity:0.5;padding-top:20px;'>No further upcoming events.</div>";
+            return;
+        }
+
+        var posClasses = ["card-top-left", "card-top-right", "card-bottom-left", "card-bottom-right"];
+
+        var html = "";
+        for (i = 0; i < events.length; i += 2) {
+            html += "<div class='event-row'>";
+            var rowEvents = [events[i], events[i + 1]];
+            for (var j = 0; j < rowEvents.length; j++) {
+                ev = rowEvents[j];
+                var posClass = posClasses[i + j] || "";
+                if (!ev) {
+                    html += "<div class='event-card " + posClass + "' style='visibility:hidden;'></div>";
+                    continue;
+                }
+                meta = CATEGORY_META[ev.category] || CATEGORY_META.campus;
+                d = ev._date;
+                todayClass = ev._days === 0 ? " today" : "";
+                todayBadge = ev._days === 0 ? "<span class='today-badge'>Today</span>" : "";
+                delay = (i * 0.08) + "s";
+
+                html += "<div class='event-card " + posClass + " fade-in" + todayClass + "' style='animation-delay:" + delay + ";'>";
+                html +=   "<div class='event-body'>";
+                html +=     "<div class='event-left'>";
+                html +=       "<div class='event-tag " + meta.tagClass + "'>" + meta.label + "</div>";
+                html +=       "<div class='event-title'>" + ev.title + todayBadge + "</div>";
+                if (ev.description) {
+                    html +=   "<div class='event-sub'>" + ev.description + "</div>";
+                }
+                html +=     "</div>";
+                html +=     "<div class='event-right'>";
+                html +=       "<div class='event-date-line'>" + formatDateDisplay(ev) + "</div>";
+                html +=       "<div class='event-days-away'>" + daysAwayLabel(ev._days) + "</div>";
+                html +=     "</div>";
+                html +=   "</div>";
+                html += "</div>";
+            }
+            html += "</div>";
+        }
+        container.innerHTML = html;
+    }
+
+    // ============================================================
+    // DATA LOADING
+    // ============================================================
+    function loadEvents() {
+        if (CONFIG.DATA_SOURCE === "json") {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", CONFIG.DATA_URL + "?t=" + Date.now(), true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        try {
+                            renderDashboard(JSON.parse(xhr.responseText));
+                        } catch(e) {
+                            renderDashboard(SAMPLE_EVENTS);
+                        }
+                    } else {
+                        renderDashboard(SAMPLE_EVENTS);
+                    }
+                }
+            };
+            xhr.send();
+        } else {
+            renderDashboard(SAMPLE_EVENTS);
+        }
+    }
+
+    loadEvents();
+    setInterval(loadEvents, CONFIG.REFRESH_MS);
+    </script>
+</body>
+</html>

@@ -1,0 +1,648 @@
+[
+  {
+    "title": "Open House",
+    "date": "2026-03-07",
+    "end_date": "",
+    "time": "10:00 AM – 2:00 PM",
+    "location": "Main Campus & Okotoks Campus",
+    "category": "campus",
+    "featured": true,
+    "description": "Explore everything BVC has to offer. Meet advisors, tour our facilities, and discover programs in business, health, technology, community studies, and entertainment arts."
+  },
+  {
+    "title": "Transcript Submission Deadline",
+    "date": "2026-03-20",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Deadline for Practical Nurse Diploma Winter 2027 applicants."
+  },
+  {
+    "title": "Withdrawal Deadline",
+    "date": "2026-04-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to withdraw from Winter 2026 without penalty."
+  },
+  {
+    "title": "Good Friday",
+    "date": "2026-04-03",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Easter Monday",
+    "date": "2026-04-06",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2026-04-15",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Submit your Application to Graduate for Spring 2026."
+  },
+  {
+    "title": "End of Winter Term",
+    "date": "2026-04-28",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day of Winter 2026 term."
+  },
+  {
+    "title": "New Student Orientation",
+    "date": "2026-04-30",
+    "end_date": "2026-05-04",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": true,
+    "description": "New Student Orientation for Spring 2026. Join us over three days to get set up, meet your peers, and prepare for a successful semester at BVC."
+  },
+  {
+    "title": "Tuition & Fees Deadline",
+    "date": "2026-05-04",
+    "time": "4:00 PM MT",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Tuition and fees due for the Spring 2026 term."
+  },
+  {
+    "title": "Start of Spring Term",
+    "date": "2026-05-05",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "First day of classes for Spring 2026."
+  },
+  {
+    "title": "Application to Graduate Opens",
+    "date": "2026-05-13",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Application to Graduate opens for eligible students."
+  },
+  {
+    "title": "Course Drop & Transfer Credit Deadline",
+    "date": "2026-05-14",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to drop courses or submit transfer credit."
+  },
+  {
+    "title": "College Closed – Victoria Day",
+    "date": "2026-05-18",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Graduation Conferral",
+    "date": "2026-05-20",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": false,
+    "description": "Spring 2026 Graduation Conferral Date."
+  },
+  {
+    "title": "Academic Upgrading Applications Open",
+    "date": "2026-05-25",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Applications open for Upgrading and EAP programs."
+  },
+  {
+    "title": "Domestic Applications Open – Spring 2027",
+    "date": "2026-06-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Domestic applications open for Spring 2027 intake."
+  },
+  {
+    "title": "SABVC Health Plan Opt-Out Deadline",
+    "date": "2026-06-03",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to opt out of SABVC Health & Dental plan."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2026-06-17",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Final deadline to apply to graduate for Spring 2026."
+  },
+  {
+    "title": "Spring Convocation Ceremonies",
+    "date": "2026-06-17",
+    "end_date": "2026-06-18",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": true,
+    "description": "Spring 2026 Convocation Ceremonies celebrating the graduating class. Join us to recognize the achievements of our students across all programs."
+  },
+  {
+    "title": "Reading Week",
+    "date": "2026-06-29",
+    "end_date": "2026-07-03",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Credit classes do not meet. Some courses continue."
+  },
+  {
+    "title": "College Closed – Canada Day",
+    "date": "2026-07-01",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Practical Nurse Diploma Applications Close",
+    "date": "2026-07-03",
+    "time": "4:00 PM MT",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Practical Nurse Diploma applications close for Spring 2027 intake."
+  },
+  {
+    "title": "Open Studies Applications Open",
+    "date": "2026-07-06",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Open Studies applications open for Fall 2026."
+  },
+  {
+    "title": "Graduation Conferral",
+    "date": "2026-07-22",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": false,
+    "description": "July 2026 Graduation Conferral Date."
+  },
+  {
+    "title": "Transfer Credit Deadline – Fall 2026",
+    "date": "2026-07-31",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Transfer credit submission deadline for Fall 2026."
+  },
+  {
+    "title": "College Closed – Heritage Day",
+    "date": "2026-08-03",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Withdrawal Deadline",
+    "date": "2026-08-04",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to withdraw from Spring 2026 without penalty."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2026-08-12",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Submit your Application to Graduate for Fall 2026."
+  },
+  {
+    "title": "End of Spring Term",
+    "date": "2026-08-21",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day of the Spring 2026 term."
+  },
+  {
+    "title": "Domestic Applications Close – Fall 2026",
+    "date": "2026-08-25",
+    "time": "4:00 PM MT",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Fall 2026 domestic applications close at 4:00 p.m. MT."
+  },
+  {
+    "title": "New Student Orientation",
+    "date": "2026-08-26",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": true,
+    "description": "New Student Orientation for Fall 2026. Get set up, meet your peers, explore campus, and prepare for a successful semester at Bow Valley College."
+  },
+  {
+    "title": "Tuition & Fees Deadline",
+    "date": "2026-08-31",
+    "time": "4:00 PM MT",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Tuition and fees due for the Fall 2026 term."
+  },
+  {
+    "title": "Start of Fall Term",
+    "date": "2026-09-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "First day of classes for Fall 2026."
+  },
+  {
+    "title": "College Closed – Labour Day",
+    "date": "2026-09-07",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "UPass Opt-Out Deadline",
+    "date": "2026-09-10",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Deadline to opt out of the Calgary Transit UPass."
+  },
+  {
+    "title": "Application to Graduate Opens",
+    "date": "2026-09-16",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Application to Graduate opens for Fall 2026 students."
+  },
+  {
+    "title": "Graduation Conferral",
+    "date": "2026-09-23",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": false,
+    "description": "September 2026 Graduation Conferral Date."
+  },
+  {
+    "title": "National Day for Truth & Reconciliation",
+    "date": "2026-09-30",
+    "time": "",
+    "location": "",
+    "category": "holiday",
+    "featured": false,
+    "description": "College observes National Day for Truth & Reconciliation."
+  },
+  {
+    "title": "Domestic Applications Open – Fall 2027",
+    "date": "2026-10-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Domestic applications open for Fall 2027 intake."
+  },
+  {
+    "title": "Open House",
+    "date": "2026-10-03",
+    "time": "",
+    "location": "Main Campus",
+    "category": "campus",
+    "featured": true,
+    "description": "Explore everything BVC has to offer. Meet advisors, tour our facilities, and discover programs in business, health, technology, community studies, and entertainment arts."
+  },
+  {
+    "title": "College Closed – Thanksgiving",
+    "date": "2026-10-12",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2026-10-14",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Submit your Application to Graduate for Fall 2026."
+  },
+  {
+    "title": "Reading Week",
+    "date": "2026-11-09",
+    "end_date": "2026-11-13",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Credit classes do not meet. Some courses continue."
+  },
+  {
+    "title": "College Closed – Remembrance Day",
+    "date": "2026-11-11",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Graduation Conferral",
+    "date": "2026-11-20",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": false,
+    "description": "November 2026 Graduation Conferral Date."
+  },
+  {
+    "title": "Convocation",
+    "date": "2026-11-25",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": true,
+    "description": "Fall 2026 Convocation Ceremony celebrating the graduating class. Join us to recognize the achievements of our students across all programs at BVC."
+  },
+  {
+    "title": "Transfer Credit Deadline – Winter 2027",
+    "date": "2026-11-30",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Transfer credit submission deadline for Winter 2027."
+  },
+  {
+    "title": "Withdrawal Deadline",
+    "date": "2026-12-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to withdraw from Fall 2026 without penalty."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2026-12-16",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Final deadline to apply to graduate for Winter 2027."
+  },
+  {
+    "title": "End of Fall Term",
+    "date": "2026-12-18",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day of the Fall 2026 term."
+  },
+  {
+    "title": "College Closed – Winter Break",
+    "date": "2026-12-24",
+    "end_date": "2027-01-01",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed Dec 24 – Jan 1. No classes or services."
+  },
+  {
+    "title": "New Student Orientation",
+    "date": "2027-01-05",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": true,
+    "description": "New Student Orientation for Winter 2027. Get set up, meet your peers, explore campus, and prepare for a successful semester at Bow Valley College."
+  },
+  {
+    "title": "Tuition & Fees Deadline",
+    "date": "2027-01-06",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Tuition and fees due for the Winter 2027 term."
+  },
+  {
+    "title": "Start of Winter Term",
+    "date": "2027-01-07",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "First day of classes for Winter 2027."
+  },
+  {
+    "title": "Application to Graduate Opens",
+    "date": "2027-01-13",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Application to Graduate opens for Winter 2027 students."
+  },
+  {
+    "title": "Course Drop & Transfer Credit Deadline",
+    "date": "2027-01-18",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to drop courses or submit transfer credit."
+  },
+  {
+    "title": "Graduation Conferral",
+    "date": "2027-01-22",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": false,
+    "description": "January 2027 Graduation Conferral Date."
+  },
+  {
+    "title": "Academic Upgrading Applications Open",
+    "date": "2027-01-25",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Applications open for Upgrading and EAP programs."
+  },
+  {
+    "title": "Domestic Applications Open – Winter 2028",
+    "date": "2027-02-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Domestic applications open for Winter 2028 intake."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2027-02-11",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Submit your Application to Graduate for Winter 2027."
+  },
+  {
+    "title": "College Closed – Alberta Family Day",
+    "date": "2027-02-15",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Reading Week",
+    "date": "2027-02-16",
+    "end_date": "2027-02-19",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Credit classes do not meet. Some courses continue."
+  },
+  {
+    "title": "SABVC Health Plan Opt-Out Deadline",
+    "date": "2027-02-05",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to opt out of SABVC Health & Dental plan."
+  },
+  {
+    "title": "Open House",
+    "date": "2027-03-06",
+    "time": "",
+    "location": "Main Campus",
+    "category": "campus",
+    "featured": true,
+    "description": "Explore everything BVC has to offer. Meet advisors, tour our facilities, and discover programs in business, health, technology, community studies, and entertainment arts."
+  },
+  {
+    "title": "Open Studies Self-Registration Opens",
+    "date": "2027-03-08",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Self-registration opens for Open Studies Spring 2027."
+  },
+  {
+    "title": "Graduation Conferral",
+    "date": "2027-03-26",
+    "time": "",
+    "location": "",
+    "category": "campus",
+    "featured": false,
+    "description": "March 2027 Graduation Conferral Date."
+  },
+  {
+    "title": "Good Friday",
+    "date": "2027-03-26",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Easter Monday",
+    "date": "2027-03-29",
+    "time": "",
+    "location": "All Campuses",
+    "category": "holiday",
+    "featured": false,
+    "description": "College closed. No classes or services."
+  },
+  {
+    "title": "Withdrawal Deadline",
+    "date": "2027-04-01",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day to withdraw from Winter 2027 without penalty."
+  },
+  {
+    "title": "Application to Graduate Deadline",
+    "date": "2027-04-16",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Final deadline to apply to graduate for Spring 2027."
+  },
+  {
+    "title": "End of Winter Term",
+    "date": "2027-04-27",
+    "time": "",
+    "location": "",
+    "category": "academic",
+    "featured": false,
+    "description": "Last day of the Winter 2027 term."
+  }
+]
