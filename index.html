@@ -37,6 +37,7 @@
             overflow: hidden; user-select: none;
         }
 
+        /* Background orbs - no inset, explicit positioning */
         .bg-orb {
             position: fixed; border-radius: 50%;
             filter: blur(80px); pointer-events: none; z-index: 0;
@@ -52,7 +53,7 @@
             bottom: -100px; right: -80px;
         }
 
-        /* ── WRAPPER: full bleed 1748×572, no glass container ── */
+        /* ── WRAPPER: full bleed 1748x572 ── */
         .dashboard-wrapper {
             width: 1748px; height: 572px;
             position: relative;
@@ -87,14 +88,14 @@
             height: 416px;
         }
 
-        /* LEFT: featured card — 480px wide */
+        /* LEFT column */
         .featured-column {
             width: 480px;
             display: flex; flex-direction: column;
             margin-right: 40px;
         }
 
-        /* RIGHT: 2x2 grid — 1748 - 50 - 50 - 480 - 40 = 1128px */
+        /* RIGHT column: 1748 - 50 - 50 - 480 - 40 = 1128px */
         .events-column {
             width: 1128px;
             display: flex; flex-direction: column;
@@ -108,7 +109,8 @@
         }
 
         /* ── FEATURED CARD ── */
-        /* 416 - 16 (label) - 12 (margin) = 388px */
+        /* col-label = 16px + 12px margin = 28px used
+           card height = 416 - 28 = 388px */
         .featured-card {
             background: var(--glass-bg);
             -webkit-backdrop-filter: blur(15px);
@@ -119,6 +121,32 @@
             height: 388px;
             overflow: hidden;
             padding: 28px;
+        }
+
+        /* ── LIST CARDS (2x2 grid) ── */
+        /* 2 rows x 185px + 1 gap x 18px = 388px */
+        /* Event list paging fade */
+        .event-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 185px 185px;
+            column-gap: 18px;
+            row-gap: 18px;
+            height: 388px;
+            transition: opacity 0.5s ease;
+        }
+        .event-list.fading { opacity: 0; }
+
+        .event-card {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            height: 185px;
+            min-width: 0;
         }
 
         .featured-top-row {
@@ -143,44 +171,17 @@
             color: rgba(255, 255, 255, 0.9); line-height: 1.6;
         }
 
-        /* ── 2x2 GRID ── */
-        /* Total height: 388px, 2 rows with 18px gap = (388 - 18) / 2 = 185px per row */
-        .event-list {
-            display: flex; flex-direction: column;
-            height: 388px;
-        }
-
-        /* Each row holds 2 cards side by side */
-        .event-row {
-            display: flex; justify-content: space-between;
-            height: 185px;
-            margin-bottom: 18px;
-        }
-        .event-row:last-child { margin-bottom: 0; }
-
-        /* Each card fills half the row minus the gap */
-        .event-card {
-            background: var(--glass-bg);
-            -webkit-backdrop-filter: blur(15px);
-            backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-            width: 546px;
-            height: 185px;
-        }
-
+        /* Same structure as BVCTV: vertically centred, side padding only */
         .event-body {
-            display: flex; align-items: flex-start; justify-content: space-between;
-            padding-top: 18px; padding-bottom: 18px;
-            padding-left: 22px; padding-right: 22px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 22px;
             height: 100%;
         }
 
         .event-left {
             display: flex; flex-direction: column;
             justify-content: center; align-items: flex-start;
+            flex: 1 1 auto; min-width: 0;
         }
 
         .event-tag {
@@ -190,6 +191,7 @@
             padding-top: 5px; padding-bottom: 5px;
             padding-left: 10px; padding-right: 10px;
             margin-bottom: 10px;
+            flex-shrink: 0;
         }
 
         .event-title {
@@ -197,21 +199,21 @@
             letter-spacing: -0.3px; margin-bottom: 5px;
         }
 
+        /* Narrow cards: cap description at 2 lines so the pill and title never shift */
         .event-sub {
             font-size: 14px; font-weight: 400; color: var(--text-secondary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
-
-        /* Position-specific padding — gap between left and right cards in each row */
-        .card-top-left    { margin-right: 18px; }
-        .card-bottom-left { margin-right: 18px; }
-        .card-top-right   { }
-        .card-bottom-right { }
 
         .event-right {
             text-align: right; display: flex; flex-direction: column;
-            align-items: flex-end; justify-content: flex-start;
+            align-items: flex-end; justify-content: center;
             margin-left: 16px;
-            padding-top: 2px;
+            flex-shrink: 0;
         }
 
         .event-date-line {
@@ -243,7 +245,14 @@
         }
 
         /* Animations */
-        .fade-in { animation: fadeIn 0.5s ease-out forwards; opacity: 0; }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+        .fade-in-1 { animation: fadeIn 0.5s ease-out 0.0s forwards; opacity: 0; }
+        .fade-in-2 { animation: fadeIn 0.5s ease-out 0.2s forwards; opacity: 0; }
+        .fade-in-3 { animation: fadeIn 0.5s ease-out 0.4s forwards; opacity: 0; }
+        .fade-in-4 { animation: fadeIn 0.5s ease-out 0.6s forwards; opacity: 0; }
         @keyframes fadeIn { to { opacity: 1; } }
     </style>
 </head>
@@ -419,7 +428,7 @@
             e = events[i];
             d = parseLocalDate(e.date);
             days = daysUntil(d);
-            if (days >= 0) {
+            if (days >= 0 && days <= 40) {
                 upcoming.push({
                     title:       e.title,
                     description: e.description || "",
@@ -437,8 +446,12 @@
         upcoming.sort(function(a, b) { return a._date - b._date; });
 
         if (upcoming.length === 0) {
+            if (pagingInterval !== null) {
+                clearInterval(pagingInterval);
+                pagingInterval = null;
+            }
             document.getElementById("featured-card").innerHTML =
-                "<div style='font-size:28px;opacity:0.6;padding:28px;'>No upcoming events found.</div>";
+                "<div style='font-size:20px;opacity:0.6;padding:8px;'>No upcoming events found.</div>";
             document.getElementById("event-list").innerHTML = "";
             return;
         }
@@ -459,7 +472,54 @@
         }
 
         renderFeatured(featuredEvent);
-        renderList(listEvents.slice(0, 4));
+        startPaging(listEvents);
+    }
+
+    // ── PAGING STATE ──
+    var PAGE_SIZE = 4;
+    var pagingInterval = null;
+    var currentPage = 0;
+    var allListEvents = [];
+
+    function startPaging(events) {
+        // Clear any existing interval from a previous data load
+        if (pagingInterval !== null) {
+            clearInterval(pagingInterval);
+            pagingInterval = null;
+        }
+
+        allListEvents = events;
+        currentPage = 0;
+
+        // Reset fade state and show first page immediately
+        document.getElementById("event-list").className = "event-list";
+        renderList(getPage(0));
+
+        // If there's only one page, no need to cycle
+        if (allListEvents.length <= PAGE_SIZE) { return; }
+
+        pagingInterval = setInterval(function() {
+            var totalPages = Math.ceil(allListEvents.length / PAGE_SIZE);
+            var nextPage = (currentPage + 1) % totalPages;
+            var container = document.getElementById("event-list");
+            if (!container) { return; }
+
+            // Fade out
+            container.className = "event-list fading";
+
+            setTimeout(function() {
+                currentPage = nextPage;
+                renderList(getPage(currentPage));
+                // Fade in
+                container.className = "event-list";
+            }, 500);
+
+        }, 10000);
+    }
+
+    function getPage(pageIndex) {
+        var start = pageIndex * PAGE_SIZE;
+        return allListEvents.slice(start, start + PAGE_SIZE);
     }
 
     function formatDateDisplay(ev) {
@@ -467,7 +527,7 @@
         var start = MONTH_FULL[d.getMonth()] + " " + d.getDate();
         if (ev.end_date) {
             var ed = parseLocalDate(ev.end_date);
-            // Same month: "April 3 – 6", different month: "March 26 – April 1"
+            // Same month: "April 3 - 6", different month: "March 26 - April 1"
             if (ed.getMonth() === d.getMonth()) {
                 return start + " \u2013 " + ed.getDate();
             } else {
@@ -479,7 +539,6 @@
 
     function renderFeatured(ev) {
         var meta = CATEGORY_META[ev.category] || CATEGORY_META.campus;
-        var d = ev._date;
         var todayBadge = ev._days === 0 ? "<span class='today-badge'>Today</span>" : "";
 
         var metaLine = "";
@@ -509,7 +568,7 @@
     }
 
     function renderList(events) {
-        var i, ev, meta, d, todayClass, todayBadge, delay;
+        var i, ev, meta, todayClass, todayBadge;
         var container = document.getElementById("event-list");
 
         if (events.length === 0) {
@@ -517,41 +576,27 @@
             return;
         }
 
-        var posClasses = ["card-top-left", "card-top-right", "card-bottom-left", "card-bottom-right"];
-
         var html = "";
-        for (i = 0; i < events.length; i += 2) {
-            html += "<div class='event-row'>";
-            var rowEvents = [events[i], events[i + 1]];
-            for (var j = 0; j < rowEvents.length; j++) {
-                ev = rowEvents[j];
-                var posClass = posClasses[i + j] || "";
-                if (!ev) {
-                    html += "<div class='event-card " + posClass + "' style='visibility:hidden;'></div>";
-                    continue;
-                }
-                meta = CATEGORY_META[ev.category] || CATEGORY_META.campus;
-                d = ev._date;
-                todayClass = ev._days === 0 ? " today" : "";
-                todayBadge = ev._days === 0 ? "<span class='today-badge'>Today</span>" : "";
-                delay = (i * 0.08) + "s";
+        for (i = 0; i < events.length; i++) {
+            ev = events[i];
+            meta = CATEGORY_META[ev.category] || CATEGORY_META.campus;
+            todayClass = ev._days === 0 ? " today" : "";
+            todayBadge = ev._days === 0 ? "<span class='today-badge'>Today</span>" : "";
 
-                html += "<div class='event-card " + posClass + " fade-in" + todayClass + "' style='animation-delay:" + delay + ";'>";
-                html +=   "<div class='event-body'>";
-                html +=     "<div class='event-left'>";
-                html +=       "<div class='event-tag " + meta.tagClass + "'>" + meta.label + "</div>";
-                html +=       "<div class='event-title'>" + ev.title + todayBadge + "</div>";
-                if (ev.description) {
-                    html +=   "<div class='event-sub'>" + ev.description + "</div>";
-                }
-                html +=     "</div>";
-                html +=     "<div class='event-right'>";
-                html +=       "<div class='event-date-line'>" + formatDateDisplay(ev) + "</div>";
-                html +=       "<div class='event-days-away'>" + daysAwayLabel(ev._days) + "</div>";
-                html +=     "</div>";
-                html +=   "</div>";
-                html += "</div>";
+            html += "<div class='event-card fade-in-" + (i + 1) + todayClass + "'>";
+            html +=   "<div class='event-body'>";
+            html +=     "<div class='event-left'>";
+            html +=       "<div class='event-tag " + meta.tagClass + "'>" + meta.label + "</div>";
+            html +=       "<div class='event-title'>" + ev.title + todayBadge + "</div>";
+            if (ev.description) {
+                html +=   "<div class='event-sub'>" + ev.description + "</div>";
             }
+            html +=     "</div>";
+            html +=     "<div class='event-right'>";
+            html +=       "<div class='event-date-line'>" + formatDateDisplay(ev) + "</div>";
+            html +=       "<div class='event-days-away'>" + daysAwayLabel(ev._days) + "</div>";
+            html +=     "</div>";
+            html +=   "</div>";
             html += "</div>";
         }
         container.innerHTML = html;
