@@ -360,7 +360,7 @@
     "time": "",
     "location": "Main Campus",
     "category": "campus",
-    "featured": true,
+    "featured": false,
     "description": "Explore everything BVC has to offer. Meet advisors, tour our facilities, and discover programs in business, health, technology, community studies, and entertainment arts."
   },
   {
@@ -373,6 +373,15 @@
     "description": "College closed. No classes or services."
   },
   {
+    "title": "Strategic Networking Series: Optimizing LinkedIn",
+    "date": "2026-10-13",
+    "time": "5:00 PM – 6:30 PM",
+    "location": "N231",
+    "category": "campus",
+    "featured": false,
+    "description": "Join us for a night of learning about the importance of strategic networking with Stan Peake."
+  },
+  {
     "title": "Application to Graduate Deadline",
     "date": "2026-10-14",
     "time": "",
@@ -380,6 +389,33 @@
     "category": "academic",
     "featured": false,
     "description": "Submit your Application to Graduate for Fall 2026."
+  },
+  {
+    "title": "Fall Career Boost 2026",
+    "date": "2026-10-15",
+    "time": "10:00 AM – 2:00 PM",
+    "location": "TransAlta Hall, 2nd Floor South Campus",
+    "category": "campus",
+    "featured": true,
+    "description": "Connect with employers, grow your network, and take the next step in your career. Meet recruiters from a wide range of industries at the Career Boost Employer Fair."
+  },
+  {
+    "title": "TC Energy Women in Leadership: Champions",
+    "date": "2026-10-15",
+    "time": "12:00 PM – 1:00 PM",
+    "location": "In-person",
+    "category": "campus",
+    "featured": false,
+    "description": "Keynote with April Hicke on allyship and inclusive workplaces."
+  },
+  {
+    "title": "BVC MentorLink Speed Networking",
+    "date": "2026-10-22",
+    "time": "5:00 PM – 6:30 PM",
+    "location": "TransAlta Hall",
+    "category": "campus",
+    "featured": false,
+    "description": "Meet mentors and prospective mentees before matches are made."
   },
   {
     "title": "Reading Week",
@@ -401,6 +437,15 @@
     "description": "College closed. No classes or services."
   },
   {
+    "title": "Strategic Networking Series: Mastering the “Why Should We Hire You?” Moment",
+    "date": "2026-11-19",
+    "time": "5:00 PM – 6:30 PM",
+    "location": "N231",
+    "category": "campus",
+    "featured": false,
+    "description": "Part of the Strategic Networking Series. Learn how to make your case when employers ask why they should hire you."
+  },
+  {
     "title": "Graduation Conferral",
     "date": "2026-11-20",
     "time": "",
@@ -419,6 +464,15 @@
     "description": "Fall 2026 Convocation Ceremony celebrating the graduating class. Join us to recognize the achievements of our students across all programs at BVC."
   },
   {
+    "title": "TC Energy Women in Leadership: Pathways Into Energy and Tech",
+    "date": "2026-11-26",
+    "time": "11:30 AM – 1:00 PM",
+    "location": "In-person",
+    "category": "campus",
+    "featured": false,
+    "description": "A woman's guide to landing your first role in energy and tech."
+  },
+  {
     "title": "Transfer Credit Deadline – Winter 2027",
     "date": "2026-11-30",
     "time": "",
@@ -435,6 +489,24 @@
     "category": "academic",
     "featured": false,
     "description": "Last day to withdraw from Fall 2026 without penalty."
+  },
+  {
+    "title": "TC Energy Women in Leadership: Career Planning and Goal Setting",
+    "date": "2026-12-03",
+    "time": "11:30 AM – 1:00 PM",
+    "location": "In-person",
+    "category": "campus",
+    "featured": false,
+    "description": "Plan your next career steps and set goals."
+  },
+  {
+    "title": "Strategic Networking Series: Industry Mixer",
+    "date": "2026-12-15",
+    "time": "5:00 PM – 6:30 PM",
+    "location": "TransAlta Hall",
+    "category": "campus",
+    "featured": false,
+    "description": "Part of the Strategic Networking Series. Meet industry professionals and put your networking skills into practice."
   },
   {
     "title": "Application to Graduate Deadline",
